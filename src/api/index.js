@@ -18,5 +18,13 @@ export const fetchResponseForPrompt = ((prompt) => {
             Authorization: `Bearer ${process.env.REACT_APP_OPENAI_SECRET}`,
         },
         body: JSON.stringify(data),
-    }).then(res => res.json());
+    })
+        .then(res => res.json())
+        .then(res => {
+            if (res.error) {
+                throw res.error.message;
+            }
+
+            return res;
+        });
 });

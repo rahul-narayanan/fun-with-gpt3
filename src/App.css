@@ -101,3 +101,7 @@
   height: 95%;
   overflow-y: auto;
 }
+
+.toast-body {
+  width: 300px;
+}
