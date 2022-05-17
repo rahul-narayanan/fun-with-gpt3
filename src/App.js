@@ -1,24 +1,40 @@
 import logo from './logo.svg';
 import './App.css';
+import { Form } from './components/form';
+import { Responses } from './components/responses';
+import store from './store'
+import { Provider } from 'react-redux'
 
 function App() {
+
+  function renderNavBar() {
+    return (
+      <nav className="navbar navbar-dark bg-dark">
+        <div className="container-fluid">
+          <a className="navbar-brand h1" href="#" style={{ fontSize: "24px", marginTop: 5 }}>
+            Fun with GPT-3 AI
+          </a>
+        </div>
+      </nav >
+    );
+  }
+
+  function renderContent() {
+    return (
+      <div className="contentContainer">
+        <Form />
+        <Responses />
+      </div>
+    )
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <div className="container-fluid mainContainer">
+        {renderNavBar()}
+        {renderContent()}
+      </div>
+    </Provider>
   );
 }
 
