@@ -8,33 +8,39 @@ export const Responses = () => {
     useEffect(() => {
         try {
             if (result.length) {
+                containerRef.current.firstChild.scrollIntoViewIfNeeded({
+                    behavior: "smooth"
+                });
                 containerRef.current.firstChild.classList.add("active");
                 setTimeout(() => {
                     containerRef.current.firstChild.classList.remove("active");
-                }, 3000);
+                }, 5000);
             }
         } catch { }
     }, [result]);
 
     function renderList() {
         if (!result.length) {
-            return <p className="fw-lighter">No responses found!</p>
+            return <p className="fw-light text-danger">No responses found!</p>
         }
 
         return result.map(({ prompt, response }, index) => (
             <div className="card" key={`response_${index}`}>
                 <div className="card-body">
-                    <b>Prompt</b>
+                    <b className="text-primary">Prompt:</b>
                     <div className="prompt">{prompt}</div>
                 </div>
                 <div className="card-body">
-                    <b>Response</b>
+                    <b className="text-success">Response:</b>
                     <div className="response">{response}</div>
                 </div>
             </div>
         ))
     }
 
+    if (!result.length) {
+        return "";
+    }
 
     return (
         <div className="container">
