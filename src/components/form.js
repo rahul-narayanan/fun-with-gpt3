@@ -54,7 +54,7 @@ export const Form = () => {
                 setError(err);
             }
         }
-    }, []);
+    }, [dispatch, validateInput]);
 
     function renderError() {
         if (error) {

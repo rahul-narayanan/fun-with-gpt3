@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { Form } from './components/form';
 import { Responses } from './components/responses';
@@ -11,9 +10,9 @@ function App() {
     return (
       <nav className="navbar navbar-dark bg-dark">
         <div className="container-fluid">
-          <a className="navbar-brand h1" href="#" style={{ fontSize: "24px", marginTop: 5 }}>
+          <span className="navbar-brand h1" style={{ fontSize: "24px", marginTop: 5 }}>
             Fun with GPT-3 AI
-          </a>
+          </span>
         </div>
       </nav >
     );

@@ -8,7 +8,7 @@ export const LoadingButton = ({ children, onClick }) => {
         setLoading(true);
         await onClick();
         setLoading(false);
-    }, []);
+    }, [onClick]);
 
     return (
         <button type="submit" className="btn btn-primary" onClick={handleSubmit} disabled={loading}>
