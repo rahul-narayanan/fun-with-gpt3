@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+# fun-with-gpt3
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a Simple Web App that sends plain text prompts to OpenAI API and displays results with caching of responses and presets to quickly issue a prompt. This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Technologies used:** React JS, Redux, Bootstrap
+**This app is deployed using Netfliy and can be found in this link** https://fun-with-gpt-3.netlify.app/
 
 ## Available Scripts
 
